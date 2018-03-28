@@ -1,0 +1,12 @@
+<h3>Edit a Restaurant:</h3>
+  <div id="form-div">  
+    <form class="form" (submit)='editRestaurantFromService()'>
+      <label for="editRestaurant.name">Restaurant Name:</label><br>
+      <input type="text" name="editRestaurant.name" [(ngModel)]="editRestaurant.name"><br>
+      <label for="editRestaurant.cuisine">Cuisine:</label><br>
+      <input type="text" name="editRestaurant.cuisine" [(ngModel)]="editRestaurant.cuisine"><br>
+      <input type="submit" value="Edit">
+    </form>
+    <button [routerLink]="['/home']">Cancel</button>
+  </div>
+  <p style="color: red" *ngIf='error'>{{error.message}}</p>

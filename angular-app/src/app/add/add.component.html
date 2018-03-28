@@ -1,0 +1,23 @@
+<a [routerLink]="['/home']">Home</a>
+  <h3>Add a restaurant review:</h3>
+  <div id="form-div">
+    
+    
+    <form class="form" (submit)='addReviewFromService()'>
+      <label for="newReview.name">Reviewer Name:</label><br>
+      <input type="text" name="newReview.name" [(ngModel)]="newReview.name"><br>
+      <label for="newReview.stars">Stars:</label><br>
+      <select name="newReview.stars" id="" [(ngModel)]="newReview.stars">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br>
+      <label for="newReview.text">Review:</label><br>
+      <textarea name="newReview.text" id="" cols="50" rows="4" [(ngModel)]="newReview.text"></textarea><br>
+      <input type="submit" value="Review">
+    </form>
+    <button [routerLink]="['/home']">Cancel</button>
+  </div>
+  <p style="color: red" *ngIf='error'>{{error.message}}</p>
